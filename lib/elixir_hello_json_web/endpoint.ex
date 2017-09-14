@@ -1,8 +1,6 @@
 defmodule ElixirHelloJsonWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :elixir_hello_json
 
-  socket "/socket", ElixirHelloJsonWeb.UserSocket
-
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
