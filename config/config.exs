@@ -21,7 +21,6 @@ config :elixir_hello_json, ElixirHelloJsonWeb.Endpoint,
 config :elixir_hello_json,
   ecto_repos: []
 
-
 # ecto stuff
 config :elixir_hello_json, ElixirHelloJson.Repo,
   host: {:system, :atom, "MNESIA_HOST", Kernel.node()},
