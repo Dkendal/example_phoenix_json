@@ -32,7 +32,7 @@ defmodule ElixirHelloJsonWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_elixir_hello_json_key",
-    signing_salt: "H7nf3Wke"
+    signing_salt: "yOv0+SdF"
 
   plug ElixirHelloJsonWeb.Router
 

@@ -8,3 +8,12 @@ config :elixir_hello_json, ElixirHelloJsonWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Configure your database
+config :elixir_hello_json, ElixirHelloJson.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
+  database: "elixir_hello_json_test",
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox

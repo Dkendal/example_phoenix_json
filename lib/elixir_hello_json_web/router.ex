@@ -7,5 +7,9 @@ defmodule ElixirHelloJsonWeb.Router do
 
   scope "/api", ElixirHelloJsonWeb do
     pipe_through :api
+
+    resources "/users", UserController, except: [:new, :edit]
   end
+
+
 end

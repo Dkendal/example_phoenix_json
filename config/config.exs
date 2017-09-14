@@ -12,12 +12,13 @@ config :elixir_hello_json, ElixirHelloJsonWeb.Endpoint,
   render_errors: [view: ElixirHelloJsonWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: ElixirHelloJson.PubSub,
            adapter: Phoenix.PubSub.PG2]
+  ecto_repos: [ElixirHelloJson.Repo]
 
 
 # ecto stuff
 config :elixir_hello_json, MyRepo,
   host: {:system, :atom, "MNESIA_HOST", Kernel.node()},
-  storage_type: {:system, :atom, "MNESIA_STORAGE_TYPE", :ram_copies}
+  storage_type: {:system, :atom, "MNESIA_STORAGE_TYPE", :ram_copies},
   adapter: EctoMnesia.Adapter
 
 config :mnesia, :dir, 'priv/data/mnesia'

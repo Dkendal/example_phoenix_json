@@ -8,6 +8,8 @@ defmodule ElixirHelloJson.Application do
 
     # Define workers and child supervisors to be supervised
     children = [
+      # Start the Ecto repository
+      supervisor(ElixirHelloJson.Repo, []),
       # Start the endpoint when the application starts
       supervisor(ElixirHelloJsonWeb.Endpoint, []),
       # Start your own worker by calling: ElixirHelloJson.Worker.start_link(arg1, arg2, arg3)
