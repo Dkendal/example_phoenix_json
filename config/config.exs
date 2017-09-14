@@ -16,7 +16,9 @@ config :elixir_hello_json, ElixirHelloJsonWeb.Endpoint,
   secret_key_base: "oIsM9VrCzrBJJTHZsJNcogk+x2hBkdsBYRi/cMl59qz3BYV1wAAmY3HfMs6Z8cmg",
   render_errors: [view: ElixirHelloJsonWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: ElixirHelloJson.PubSub,
-           adapter: Phoenix.PubSub.PG2],
+           adapter: Phoenix.PubSub.PG2]
+
+config :elixir_hello_json,
   ecto_repos: [ElixirHelloJson.Repo]
 
 
