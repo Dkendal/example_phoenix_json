@@ -37,5 +37,5 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :elixir_hello_json, ElixirHelloJson.Repo,
-  adapter: Ecto.Adapters.Mnesia
+# config :elixir_hello_json, ElixirHelloJson.Repo,
+#   adapter: Ecto.Adapters.Mnesia

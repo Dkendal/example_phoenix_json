@@ -5,6 +5,11 @@
 # is restricted to this project.
 use Mix.Config
 
+config :mime, :types, %{
+  "application/javascript" => ["json"],
+  "application/javascript+api" => ["json"]
+}
+
 # Configures the endpoint
 config :elixir_hello_json, ElixirHelloJsonWeb.Endpoint,
   url: [host: "localhost"],
@@ -16,7 +21,7 @@ config :elixir_hello_json, ElixirHelloJsonWeb.Endpoint,
 
 
 # ecto stuff
-config :elixir_hello_json, MyRepo,
+config :elixir_hello_json, ElixirHelloJson.Repo,
   host: {:system, :atom, "MNESIA_HOST", Kernel.node()},
   storage_type: {:system, :atom, "MNESIA_STORAGE_TYPE", :ram_copies},
   adapter: EctoMnesia.Adapter
