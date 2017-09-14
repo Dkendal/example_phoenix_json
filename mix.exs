@@ -19,7 +19,7 @@ defmodule ElixirHelloJson.Mixfile do
   def application do
     [
       mod: {ElixirHelloJson.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :ecto_mnesia]
     ]
   end
 
@@ -35,7 +35,8 @@ defmodule ElixirHelloJson.Mixfile do
       {:phoenix, "~> 1.3.0"},
       {:phoenix_pubsub, "~> 1.0"},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:ecto_mnesia, "~> 0.9.0"}
     ]
   end
 end

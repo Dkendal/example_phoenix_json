@@ -13,6 +13,15 @@ config :elixir_hello_json, ElixirHelloJsonWeb.Endpoint,
   pubsub: [name: ElixirHelloJson.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+
+# ecto stuff
+config :elixir_hello_json, MyRepo,
+  host: {:system, :atom, "MNESIA_HOST", Kernel.node()},
+  storage_type: {:system, :atom, "MNESIA_STORAGE_TYPE", :ram_copies}
+  adapter: EctoMnesia.Adapter
+
+config :mnesia, :dir, 'priv/data/mnesia'
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
