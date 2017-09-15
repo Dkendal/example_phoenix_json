@@ -5,7 +5,7 @@ defmodule ElixirHelloJson.Mixfile do
     [
       app: :elixir_hello_json,
       version: "0.0.1",
-      elixir: "~> 1.4",
+      elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
       start_permanent: Mix.env == :prod,
@@ -38,7 +38,8 @@ defmodule ElixirHelloJson.Mixfile do
       {:phoenix_ecto, "~> 3.2"},
       {:ecto_mnesia, "~> 0.9.0"},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:mix_docker, "~> 0.5.0"},
     ]
   end
 
