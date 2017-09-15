@@ -19,7 +19,9 @@ config :elixir_hello_json, ElixirHelloJsonWeb.Endpoint,
            adapter: Phoenix.PubSub.PG2]
 
 config :elixir_hello_json,
-  ecto_repos: []
+  # ecto_repos: []
+  ecto_repos: [ElixirHelloJson.Repo]
+
 
 # ecto stuff
 config :elixir_hello_json, ElixirHelloJson.Repo,

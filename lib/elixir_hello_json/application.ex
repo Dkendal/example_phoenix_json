@@ -10,6 +10,7 @@ defmodule ElixirHelloJson.Application do
     children = [
       # Start the Ecto repository
       supervisor(ElixirHelloJson.Repo, []),
+      # worker(Task, [&configure_mnesia_in_memory/0], restart: :transient),
       # Start the endpoint when the application starts
       supervisor(ElixirHelloJsonWeb.Endpoint, []),
       # Start your own worker by calling: ElixirHelloJson.Worker.start_link(arg1, arg2, arg3)
@@ -27,5 +28,17 @@ defmodule ElixirHelloJson.Application do
   def config_change(changed, _new, removed) do
     ElixirHelloJsonWeb.Endpoint.config_change(changed, removed)
     :ok
+  end
+
+  def configure_mnesia_in_memory() do
+    Process.sleep(500)
+    IO.puts "\nconfigure mnesia"
+    {:ok, _} = Application.ensure_all_started(:my_parent)
+
+    path = Application.app_dir(:my_child, "priv/repo/migrations")
+    Ecto.Migrator.run(MyParent.Repo, path, :up, all: true)
+
+    IO.inspect Mix.Task.run("ecto.create")
+    IO.inspect Mix.Task.run("ecto.migrate")
   end
 end
