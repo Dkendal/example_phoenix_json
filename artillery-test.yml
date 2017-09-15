@@ -1,0 +1,23 @@
+config:
+  target: "http://localhost:4000/"
+  phases:
+    - duration: 10
+      arrivalRate: 5
+scenarios:
+  - name: "users create and get"
+    flow:
+      - post:
+          url: "/api/users" 
+          json: 
+            user: 
+              name: "Bob Smith"
+          capture:
+            json: "$.data.id"
+            as: "id"
+      - get:
+          url: "/api/users/{{ id }}"
+      - get:
+          url: "/api/users/{{ id }}"
+      - get:
+          url: "/api/users/{{ id }}"
+

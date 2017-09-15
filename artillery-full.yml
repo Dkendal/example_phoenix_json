@@ -9,7 +9,8 @@ scenarios:
       - post:
           url: "/api/users" 
           json: 
-            name: "Bob Smith"
+            user: 
+              name: "Bob Smith"
           capture:
             json: "$.data.id"
             as: "id"
